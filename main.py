@@ -120,6 +120,7 @@ while play:
         if keys[pygame.K_DOWN]:
             if radius>5:
                 radius -= 1
+        # Empezar juego
         if keys[pygame.K_RETURN]:
             angleP=0
             intro=False
@@ -132,7 +133,6 @@ while play:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-
 
         # Actualizar posición de la pelota en movimiento circular
         x = int(width/2 + circle_radius * math.cos(math.radians(angleP)))
@@ -254,12 +254,13 @@ while play:
 
         # Manejar entrada del teclado
         keys = pygame.key.get_pressed()
-        # Modificar Velocidad
+        # Repetir juego
         if keys[pygame.K_r]:
             points=0
             game=True
             intro=False
             end=False
+        # Salir del juego
         elif keys[pygame.K_ESCAPE]:
             intro=False
             game=False
@@ -294,13 +295,14 @@ while play:
 
         # Manejar entrada del teclado
         keys = pygame.key.get_pressed()
-        # Modificar Velocidad
+        # Repetir juego
         if keys[pygame.K_r]:
             points=0
             game=True
             win=False
             intro=False
             end=False
+        # Salir del juego
         elif keys[pygame.K_ESCAPE]:
             win=False
             intro=False
